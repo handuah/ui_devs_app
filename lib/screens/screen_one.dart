@@ -137,6 +137,83 @@ class _ScreenOneState extends State<ScreenOne> {
                 ),
               ),
             ),
+            SizedBox(
+              height: h * 0.03,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                SizedBox(
+                  width: w * 0.46,
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: Color(0xFF242425)),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 8.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          const CircleAvatar(
+                            child: Icon(
+                              Icons.roundabout_left_outlined,
+                              color: Colors.white,
+                            ),
+                            radius: 26.0,
+                            backgroundColor: Color.fromARGB(255, 53, 53, 58),
+                          ),
+                          Text(
+                            'Transfers',
+                            style: GoogleFonts.anekTelugu(
+                              fontSize: h * 0.020,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  width: w * 0.46,
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Color(0xFF1364FF),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 8.0, horizontal: 0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          const CircleAvatar(
+                            child: Icon(
+                              Icons.add,
+                              color: Colors.white,
+                            ),
+                            radius: 26.0,
+                            backgroundColor: Color.fromARGB(162, 64, 128, 245),
+                          ),
+                          Text(
+                            'Add Cash',
+                            style: GoogleFonts.anekTelugu(
+                              fontSize: h * 0.020,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ),
