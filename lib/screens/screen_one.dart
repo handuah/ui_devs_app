@@ -364,10 +364,10 @@ class _ScreenOneState extends State<ScreenOne> {
       'amount': 150.88,
     },
     {
-      'icon_d': Icons.coffee_outlined,
-      'name': 'Food',
+      'icon_d': Icons.airplane_ticket,
+      'name': 'Travel',
       'type': 'Payment',
-      'amount': 6.88,
+      'amount': 2000.88,
     },
     {
       'icon_d': Icons.coffee_outlined,
