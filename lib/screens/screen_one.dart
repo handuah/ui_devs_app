@@ -280,7 +280,7 @@ class _ScreenOneState extends State<ScreenOne> {
               height: h * 0.02,
             ),
             Container(
-              height: h * 0.4,
+              height: h * 0.5,
               width: w,
               decoration: BoxDecoration(
                 color: Color(0xFF242425),
@@ -315,46 +315,69 @@ class _ScreenOneState extends State<ScreenOne> {
                         ),
                       ],
                     ),
-                    ListTile(
-                      horizontalTitleGap: 2.0,
-                      leading: const CircleAvatar(
-                        radius: 30.0,
-                        backgroundColor: Color.fromARGB(38, 152, 152, 157),
-                        child: Icon(
-                          Icons.coffee_outlined,
-                          color: Colors.white,
-                        ),
-                      ),
-                      title: Text(
-                        'Food',
-                        style: GoogleFonts.anekTelugu(
-                          fontSize: h * 0.024,
-                          fontWeight: FontWeight.w600,
-                          color: Colors.white,
-                        ),
-                      ),
-                      subtitle: Text(
-                        'Payment',
-                        style: GoogleFonts.anekTelugu(
-                          fontSize: h * 0.020,
-                          fontWeight: FontWeight.normal,
-                          color: Colors.white.withOpacity(0.5),
-                        ),
-                      ),
-                      trailing: Text(
-                        '-6.88 GHC',
-                        style: GoogleFonts.anekTelugu(
-                          fontSize: h * 0.024,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                        ),
-                      ),
+                    Container(
+                      height: h * 0.4,
+                      width: w,
+                      child: ListView.separated(
+                          itemBuilder: (BuildContext context, int trans) {
+                            return transList('Food', 'Payment', 6.88);
+                          },
+                          separatorBuilder: (context, int transa) {
+                            return SizedBox(
+                              height: h * 0.001,
+                            );
+                          },
+                          itemCount: 5),
                     ),
                   ],
                 ),
               ),
             ),
           ],
+        ),
+      ),
+    );
+  }
+
+  Widget transList(String transTitle, String transType, double transAmt) {
+    double h = MediaQuery.of(context).size.height;
+    double w = MediaQuery.of(context).size.width;
+    return ListTile(
+      horizontalTitleGap: 2.0,
+      contentPadding: const EdgeInsets.symmetric(horizontal: 0.0),
+      leading: const CircleAvatar(
+        radius: 30.0,
+        backgroundColor: Color.fromARGB(38, 152, 152, 157),
+        child: Icon(
+          Icons.coffee_outlined,
+          color: Colors.white,
+        ),
+      ),
+      title: Text(
+        // 'Food',
+        transType,
+        style: GoogleFonts.anekTelugu(
+          fontSize: h * 0.024,
+          fontWeight: FontWeight.w600,
+          color: Colors.white,
+        ),
+      ),
+      subtitle: Text(
+        // 'Payment',
+        transType,
+        style: GoogleFonts.anekTelugu(
+          fontSize: h * 0.020,
+          fontWeight: FontWeight.normal,
+          color: Colors.white.withOpacity(0.5),
+        ),
+      ),
+      trailing: Text(
+        // '-6.88 GHC',
+        '${transAmt.toString()} GHC',
+        style: GoogleFonts.anekTelugu(
+          fontSize: h * 0.024,
+          fontWeight: FontWeight.bold,
+          color: Colors.white,
         ),
       ),
     );
