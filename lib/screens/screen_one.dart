@@ -214,6 +214,146 @@ class _ScreenOneState extends State<ScreenOne> {
                 ),
               ],
             ),
+            SizedBox(
+              height: h * 0.03,
+            ),
+            Container(
+              height: h * 0.2,
+              width: w,
+              decoration: BoxDecoration(
+                color: Color(0xFF242425),
+                borderRadius: BorderRadius.circular(30.0),
+              ),
+              child: Padding(
+                padding: EdgeInsets.symmetric(
+                    vertical: h * 0.02, horizontal: w * 0.04),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Recents',
+                      style: GoogleFonts.anekTelugu(
+                        fontSize: h * 0.028,
+                        fontWeight: FontWeight.w600,
+                        color: Colors.white,
+                      ),
+                    ),
+                    SizedBox(
+                      height: h * 0.01,
+                    ),
+                    const Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        CircleAvatar(
+                          radius: 40.0,
+                          backgroundColor: Colors.blue,
+                          foregroundImage: NetworkImage(
+                              'https://megaport.hu/media/king-include/uploads/2023/10/906363-female-avatar-profile-picture-013.jpg'),
+                        ),
+                        CircleAvatar(
+                          radius: 40.0,
+                          backgroundColor: Colors.blue,
+                          foregroundImage: NetworkImage(
+                              'https://megaport.hu/media/king-include/uploads/2023/10/906363-female-avatar-profile-picture-013.jpg'),
+                        ),
+                        CircleAvatar(
+                          radius: 40.0,
+                          backgroundColor: Colors.blue,
+                          foregroundImage: NetworkImage(
+                              'https://megaport.hu/media/king-include/uploads/2023/10/906363-female-avatar-profile-picture-013.jpg'),
+                        ),
+                        CircleAvatar(
+                          radius: 40.0,
+                          backgroundColor: Colors.blue,
+                          foregroundImage: NetworkImage(
+                              'https://megaport.hu/media/king-include/uploads/2023/10/906363-female-avatar-profile-picture-013.jpg'),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            SizedBox(
+              height: h * 0.02,
+            ),
+            Container(
+              height: h * 0.4,
+              width: w,
+              decoration: BoxDecoration(
+                color: Color(0xFF242425),
+                borderRadius: BorderRadius.circular(30.0),
+              ),
+              child: Padding(
+                padding: EdgeInsets.symmetric(
+                    vertical: h * 0.02, horizontal: w * 0.04),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Transactions',
+                          style: GoogleFonts.anekTelugu(
+                            fontSize: h * 0.028,
+                            fontWeight: FontWeight.w600,
+                            color: Colors.white,
+                          ),
+                        ),
+                        Text(
+                          'View All',
+                          style: GoogleFonts.anekTelugu(
+                            fontSize: h * 0.022,
+                            fontWeight: FontWeight.w500,
+                            color: Color(0xFFC6FE1E),
+                          ),
+                        ),
+                      ],
+                    ),
+                    ListTile(
+                      horizontalTitleGap: 2.0,
+                      leading: const CircleAvatar(
+                        radius: 30.0,
+                        backgroundColor: Color.fromARGB(38, 152, 152, 157),
+                        child: Icon(
+                          Icons.coffee_outlined,
+                          color: Colors.white,
+                        ),
+                      ),
+                      title: Text(
+                        'Food',
+                        style: GoogleFonts.anekTelugu(
+                          fontSize: h * 0.024,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.white,
+                        ),
+                      ),
+                      subtitle: Text(
+                        'Payment',
+                        style: GoogleFonts.anekTelugu(
+                          fontSize: h * 0.020,
+                          fontWeight: FontWeight.normal,
+                          color: Colors.white.withOpacity(0.5),
+                        ),
+                      ),
+                      trailing: Text(
+                        '-6.88 GHC',
+                        style: GoogleFonts.anekTelugu(
+                          fontSize: h * 0.024,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
       ),
