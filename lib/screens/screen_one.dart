@@ -320,7 +320,12 @@ class _ScreenOneState extends State<ScreenOne> {
                       width: w,
                       child: ListView.separated(
                           itemBuilder: (BuildContext context, int trans) {
-                            return transList('Food', 'Payment', 6.88);
+                            // return transList('Food', 'Payment', 6.88);
+                            return transList(
+                                transactions[trans]['name'],
+                                transactions[trans]['type'],
+                                transactions[trans]['amount'],
+                                transactions[trans]['icon_d']);
                           },
                           separatorBuilder: (context, int transa) {
                             return SizedBox(
@@ -339,17 +344,58 @@ class _ScreenOneState extends State<ScreenOne> {
     );
   }
 
-  Widget transList(String transTitle, String transType, double transAmt) {
+  List transactions = [
+    {
+      'icon_d': Icons.coffee_outlined,
+      'name': 'Food',
+      'type': 'Payment',
+      'amount': -6.88,
+    },
+    {
+      'icon_d': Icons.money_outlined,
+      'name': 'Recipient',
+      'type': 'Deposit',
+      'amount': 450.88,
+    },
+    {
+      'icon_d': Icons.credit_card_outlined,
+      'name': 'App Store',
+      'type': 'Payment',
+      'amount': 150.88,
+    },
+    {
+      'icon_d': Icons.coffee_outlined,
+      'name': 'Food',
+      'type': 'Payment',
+      'amount': 6.88,
+    },
+    {
+      'icon_d': Icons.coffee_outlined,
+      'name': 'Food',
+      'type': 'Payment',
+      'amount': 6.88,
+    },
+    {
+      'icon_d': Icons.coffee_outlined,
+      'name': 'Food',
+      'type': 'Payment',
+      'amount': 6.88,
+    },
+  ];
+
+  Widget transList(
+      String transTitle, String transType, double transAmt, IconData iconName) {
     double h = MediaQuery.of(context).size.height;
     double w = MediaQuery.of(context).size.width;
     return ListTile(
       horizontalTitleGap: 2.0,
       contentPadding: const EdgeInsets.symmetric(horizontal: 0.0),
-      leading: const CircleAvatar(
+      leading: CircleAvatar(
         radius: 30.0,
-        backgroundColor: Color.fromARGB(38, 152, 152, 157),
+        backgroundColor: const Color.fromARGB(38, 152, 152, 157),
         child: Icon(
-          Icons.coffee_outlined,
+          // Icons.coffee_outlined,
+          iconName,
           color: Colors.white,
         ),
       ),
